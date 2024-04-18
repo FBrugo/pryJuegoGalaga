@@ -51,7 +51,7 @@ namespace pryJuegoGalaga
             imgNave.Size = new System.Drawing.Size(50, 50);
             imgNave.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            posX = aleatorioPosX.Next(0, 400);
+            posX = aleatorioPosX.Next(0, 750);
             posY = aleatorioPosY.Next(0, 200);
             imgNave.Location = new Point(posX, posY);
 

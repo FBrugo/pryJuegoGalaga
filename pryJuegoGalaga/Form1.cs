@@ -26,7 +26,7 @@ namespace pryJuegoGalaga
         int contador = 0;
         private void timerEnemigo_Tick(object sender, EventArgs e)
         {
-            if (contador < 20)
+            if (contador < 10)
             {
                 objNaveEnemigo.CrearEnemigo();
                 //objNaveEnemigo.imgNave.Size = new System.Drawing.Size(50, 50);
@@ -41,6 +41,34 @@ namespace pryJuegoGalaga
             {
                 timerEnemigo.Enabled = false;
             }
+        }
+
+        private void Disparo_Tick(object sender, EventArgs e)
+        {
+            
+
+                if (pictureBoxDisparo.Location.Y > 0)
+                {
+                    if (pictureBoxDisparo.Bounds.IntersectsWith(pictureBox2.Bounds))
+                    {
+                        pictureBoxDisparo.Dispose();
+                        pictureBox2.BackColor = Color.Blue;
+                    }
+
+                        foreach(Control imagen in this.Controls)
+                        {
+                            if (imagen.Tag == "Disparo")
+                            {
+                                imagen.Location =
+                                new Point(
+                                imagen.Location.X,
+                                imagen.Location.Y - 10);
+                            }
+
+                        }
+                }
+
+            
         }
     }
 }
